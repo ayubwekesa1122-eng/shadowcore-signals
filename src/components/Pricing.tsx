@@ -2,12 +2,20 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Pricing = () => {
-  const handleMonthlySubscription = () => {
-    window.open("https://wa.me/254746293985?text=I%20want%20to%20subscribe%20to%20SCX%20Monthly%20Plan%20($35/month)", "_blank");
+  const handleMonthlyPayPal = () => {
+    window.open("https://www.paypal.com/paypalme/wekesaayub66/35", "_blank", "noopener,noreferrer");
   };
 
-  const handleLifetimeSubscription = () => {
-    window.open("https://wa.me/254746293985?text=I%20want%20to%20get%20SCX%20Lifetime%20Access%20($1000)", "_blank");
+  const handleLifetimePayPal = () => {
+    window.open("https://www.paypal.com/paypalme/wekesaayub66/1000", "_blank", "noopener,noreferrer");
+  };
+
+  const handleMonthlyWhatsApp = () => {
+    window.open("https://wa.me/254746293985?text=I%20want%20to%20subscribe%20to%20SCX%20Monthly%20Plan%20($35/month)", "_blank", "noopener,noreferrer");
+  };
+
+  const handleLifetimeWhatsApp = () => {
+    window.open("https://wa.me/254746293985?text=I%20want%20to%20get%20SCX%20Lifetime%20Access%20($1000)", "_blank", "noopener,noreferrer");
   };
 
   const features = [
@@ -55,12 +63,21 @@ const Pricing = () => {
                     </div>
                   ))}
                 </div>
-                <Button 
-                  onClick={handleMonthlySubscription}
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-6 text-lg"
-                >
-                  Start Monthly Plan
-                </Button>
+                <div className="space-y-3">
+                  <Button 
+                    onClick={handleMonthlyPayPal}
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-6 text-lg"
+                  >
+                    💳 Pay with PayPal - $35
+                  </Button>
+                  <Button 
+                    onClick={handleMonthlyWhatsApp}
+                    variant="outline"
+                    className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold py-6 text-lg"
+                  >
+                    📱 Contact via WhatsApp
+                  </Button>
+                </div>
               </CardContent>
             </Card>
 
@@ -101,18 +118,53 @@ const Pricing = () => {
                     </div>
                   </div>
                 </div>
-                <Button 
-                  onClick={handleLifetimeSubscription}
-                  className="w-full bg-gradient-to-r from-gold to-primary hover:from-primary hover:to-gold text-black font-bold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  Get Lifetime Access
-                </Button>
+                <div className="space-y-3">
+                  <Button 
+                    onClick={handleLifetimePayPal}
+                    className="w-full bg-gradient-to-r from-gold to-primary hover:from-primary hover:to-gold text-black font-bold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    👑 Pay with PayPal - $1000
+                  </Button>
+                  <Button 
+                    onClick={handleLifetimeWhatsApp}
+                    variant="outline"
+                    className="w-full border-gold text-gold hover:bg-gold hover:text-black font-semibold py-6 text-lg"
+                  >
+                    📱 Contact via WhatsApp
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>
 
-          {/* Money Back Guarantee */}
+          {/* After Payment Instructions */}
           <div className="text-center mt-12">
+            <div className="bg-gradient-to-r from-primary/10 to-gold/10 border border-primary/30 rounded-lg p-8 max-w-3xl mx-auto">
+              <div className="text-3xl mb-4">🔐</div>
+              <h3 className="text-2xl font-bold text-primary mb-4">After Payment</h3>
+              <p className="text-lg text-foreground mb-6">
+                You'll receive your VIP access PIN via:
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div className="bg-card/50 rounded-lg p-4 border border-primary/20">
+                  <div className="text-2xl mb-2">📱</div>
+                  <p className="text-sm text-muted-foreground">WhatsApp</p>
+                  <p className="text-primary font-semibold">+254746293985</p>
+                </div>
+                <div className="bg-card/50 rounded-lg p-4 border border-primary/20">
+                  <div className="text-2xl mb-2">📧</div>
+                  <p className="text-sm text-muted-foreground">Email</p>
+                  <p className="text-primary font-semibold">scxforexsignal@gmail.com</p>
+                </div>
+              </div>
+              <p className="text-gold font-semibold text-lg">
+                Use the PIN to unlock the SCX VIP Signal Portal
+              </p>
+            </div>
+          </div>
+
+          {/* Money Back Guarantee */}
+          <div className="text-center mt-8">
             <div className="bg-card/50 border border-primary/20 rounded-lg p-6 max-w-2xl mx-auto">
               <div className="text-3xl mb-3">🛡️</div>
               <h3 className="text-xl font-bold text-primary mb-2">7-Day Money Back Guarantee</h3>
